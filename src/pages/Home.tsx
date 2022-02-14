@@ -15,7 +15,7 @@ export function Home() {
       title: newTaskTitle,
       done: false,
     }
-    
+
     setTasks(oldTasks => [...oldTasks, newTask]);
   }
 
@@ -24,6 +24,9 @@ export function Home() {
   }
 
   function handleRemoveTask(id: number) {
+    const removeTasks = tasks.filter(item => item.id !== id );
+
+    setTasks(removeTasks)
     //TODO - remove task from state
   }
 
